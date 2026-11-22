@@ -64,3 +64,11 @@ Route::prefix('admin')->name('admin.')->group(function() {
         return "This is item data on admin page";
     })->name('items');
 });
+
+//TAMBAHAN UNTUK PORTOFOLIO
+Route::prefix('portofolio')->name('portofolio.')->group(function() {
+    Route::view('/', 'portofolio.index')->name('beranda');
+    Route::view('/profil', 'portofolio.about')->name('profil');
+    Route::view('/proyek', 'portofolio.portfolio')->name('proyek');
+    Route::view('/kontak', 'portofolio.contact')->name('kontak');
+});
